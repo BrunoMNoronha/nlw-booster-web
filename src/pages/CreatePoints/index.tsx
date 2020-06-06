@@ -5,6 +5,7 @@ import { Map, TileLayer, Marker } from 'react-leaflet';
 import axios from 'axios';
 import { LeafletMouseEvent } from 'leaflet';
 import api from '../../services/api';
+import Dropzone from '../../components/Dropzone';
 
 import './styles.css';
 
@@ -28,12 +29,12 @@ interface IBGECityRespose {
 }
 
 const CreatePoint = () => {
-  const [items, setItems] = useState<Item[]>([]);
   const [ufs, setUfs] = useState<string[]>([]);
+  const [items, setItems] = useState<Item[]>([]);
   const [cities, setCities] = useState<string[]>([]);
 
   const [inicialPosition, setInicialPosition] = useState<[number, number]>([-15.858861, -48.079278])
-  
+
   const [formData, setFormDate] = useState({
     name: '',
     email: '',
@@ -42,6 +43,7 @@ const CreatePoint = () => {
 
   const [selectedUf, setSelectedUf] = useState('0');
   const [selectedCity, setSelectedCity] = useState('0');
+  const [selectedFile, setSelectedFile] = useState<File>();
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [selectedPosition, setSelectionPosition] = useState<[number, number]>([0, 0]);
 
@@ -76,7 +78,7 @@ const CreatePoint = () => {
       .then(response => {
         const cityNames = response.data.map(city => city.nome);
         setCities(cityNames);
-  });
+      });
   }, [selectedUf]);
 
   function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
@@ -108,29 +110,33 @@ const CreatePoint = () => {
       const filteredItems = selectedItems.filter(item => item !== id);
       setSelectedItems(filteredItems);
     } else {
-      setSelectedItems([ ...selectedItems, id ])
+      setSelectedItems([...selectedItems, id])
     }
   };
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
-    const { name, email, whatsapp} = formData;
+    const { name, email, whatsapp } = formData;
     const uf = selectedUf;
     const city = selectedCity;
-    const [ latitude, longitude ] = selectedPosition;
+    const [latitude, longitude] = selectedPosition;
     const items = selectedItems;
 
-    const data = {
-      name,
-      email,
-      whatsapp,
-      uf,
-      city,
-      latitude,
-      longitude,
-      items
-    };
+    const data = new FormData();
+
+    data.append('name', name);
+    data.append('email', email);
+    data.append('whatsapp', whatsapp);
+    data.append('uf', uf);
+    data.append('city', city);
+    data.append('latitude', String(latitude));
+    data.append('longitude', String(longitude));
+    data.append('items', items.join(','));
+
+    if (selectedFile) {
+      data.append('image', selectedFile);
+    }
 
     await api.post('points', data);
 
@@ -151,6 +157,8 @@ const CreatePoint = () => {
 
       <form onSubmit={handleSubmit}>
         <h1>Cadastro do ponto de coleta</h1>
+
+        <Dropzone onFileUploaded={setSelectedFile} />
 
         <fieldset>
           <legend>
