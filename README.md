@@ -1,44 +1,101 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+    <img alt="NextLevelWeek" title="#NextLevelWeek" src=".github/logo.svg" width="250px" />
+</h1>
 
-## Available Scripts
+<h4 align="center"> 
+	:construction: NextLevelWeek 1.0 :construction:
+</h4>
 
-In the project directory, you can run:
+<p align="center">
+<a href="https://insomnia.rest/run/?label=NLW%201.0%20Ecoleta&uri=https%3A%2F%2Fraw.githubusercontent.com%2FDanielObara%2FNLW-1.0%2Fmaster%2Fbackend%2FInsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
+</p>
+<p align="center">
+  <a href="#-nlw">Next Level Week</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-Technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-how-to-use">How to use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
+</p>
 
-### `yarn start`
+## :information_source: What's Next Level Week?
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+NLW is a practical week with lots of code, challenges, networking and a single objective: to take you to the next level.
+Through our method you will learn new tools, learn about new technologies and discover hacks that will boost your career.
+An online and completely free event that will help you take the next step in your evolution as a dev.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 💻 Project
 
-### `yarn test`
+Ecoleta is a project developed based on international environment week. 
+That aims to connect people to companies that collect specific waste such as light bulbs, batteries, cooking oil, etc.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h1 align="center">
+    <img alt="Example" title="Example" src=".github/capa.svg" width="500px" />
+</h1>
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :rocket: Technologies
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+This project was developed with the following technologies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Node.js][nodejs]
+- [TypeScript][typescript]
+- [React][reactjs]
+- [React Native][rn]
+- [Expo][expo]
 
-### `yarn eject`
+## 🔖 Layout
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To access the layout use [Figma](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## :information_source: How To Use
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js][nodejs] + [Yarn][yarn] installed on your computer.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+From your command line:
 
-## Learn More
+### Install Front-end
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+# Clone this repository
+$ git clone https://github.com/BrunoMNoronha/nlw-booster-web
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Go into the repository
+$ cd nlw-booster-web
+
+# Install dependencies
+$ yarn install
+
+# Run
+$ yarn start
+
+# running on port 3000
+```
+
+## 🤔 How to contribute
+
+- Make a fork;
+- Create a branck with your feature: `git checkout -b my-feature`;
+- Commit changes: `git commit -m 'feat: My new feature'`;
+- Make a push to your branch: `git push origin my-feature`.
+
+After merging your receipt request to done, you can delete a branch from yours.
+
+## :memo: License
+
+This project is under the MIT license. See the [LICENSE](https://github.com/DanielObara/NLW-1.0/blob/master/LICENSE) for details.
+
+
+Made with ♥ by Bruno Menezes Noronha :wave: [Get in touch!](https://www.linkedin.com/in/brunomnoronha/)
+
+[nodejs]: https://nodejs.org/
+[typescript]: https://www.typescriptlang.org/
+[expo]: https://expo.io/
+[reactjs]: https://reactjs.org
+[rn]: https://facebook.github.io/react-native/
+[yarn]: https://yarnpkg.com/
+[vs]: https://code.visualstudio.com/
+[vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+[vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+[prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
